@@ -19,7 +19,7 @@ Example for compiling the SNS products
 
  2) `cd org.csstudio.sns/build`
  
- 3) Edit the file `setup.sh` to define your `JAVA_HOME` and `M2_HOME`
+ 3) `source setup.sh`
  
  4) `sh make.sh`
    Note that this build setup is self-contained.
@@ -35,6 +35,12 @@ As a result, you should find log files for the various build steps in the origin
 `0_diirt.log`, `1_maven-osgi-bundles.log`, `2_cs-studio-thirdparty.log`, `3_core.log`, `4_applications.log`, `5_display_builder.log`, `6_sns.log`.
 
 The directory `org.csstudio.sns/repository/target/products` will contain the binary products.
-One of the UI product's /plugin folder can be used as a target platform for the Eclipse IDE.
+
+To import into Eclipse IDE:
+1) `Import->Maven->Existing Maven Products` and find the code that you are interested in editing e.g. cs-studio\applications\archive
+2) `Import->Maven->Existing Maven Products` org.csstudio.sns/repository
+3) Create a target platform and add a directory pointing at org.csstudio.sns/repository/target/repository/plugins
+4) Run the product you are interested from org.csstudio.sns/repository. You may need to right click on the product `Run As...->Run Configurations->Plug-ins->Add Required Plug-ins`
+
 `org.csstudio.sns/repository/target/repository` is a P2 repository from which the UI product
 can install optional features.

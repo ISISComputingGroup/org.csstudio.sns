@@ -72,7 +72,7 @@ TOP=`pwd`
 (cd cs-studio/applications; time  mvn $OPTS ) 2>&1 | tee 4_applications.log
 
 # display.builder pom.xml looks for $CSS_REPO
-CSS_REPO=file:$TOP/org.csstudio.sns/css_repo
+CSS_REPO=file:${TOP##/c}/org.csstudio.sns/css_repo/
 (cd org.csstudio.display.builder; time mvn -s $MSET -Dcss_repo=$CSS_REPO clean verify ) 2>&1 | tee 5_display_builder.log
 
 # With download: Total time: 09:28 min
