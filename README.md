@@ -7,19 +7,20 @@ SNS specific additions and build for CS-Studio
 Example for compiling the SNS products
 --------------------------------------
 
- 1) Somewhere on your computer, execute what's in build/get_all.sh .
+ 1) Somewhere on your computer, execute what's in build/get_all.sh (you can do this by checking this repo out into that directory first). You should execute it in a bash shell.
     As a result, you should have a directory with these sub-dirs:
 
-    diirt
-    maven-osgi-bundles
-    cs-studio-thirdparty
-    cs-studio
-    org.csstudio.display.builder
-    org.csstudio.sns
+    - diirt
+    - maven-osgi-bundles
+    - cs-studio-thirdparty
+    - cs-studio
+    - org.csstudio.display.builder
+    - org.csstudio.sns
 
  2) `cd org.csstudio.sns/build`
  
  3) `source setup.sh`
+     - When I did this I needed add JAVA Home and MVN home explicitly. 
  
  4) `sh make.sh`
    Note that this build setup is self-contained.
